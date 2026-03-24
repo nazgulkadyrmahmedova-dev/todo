@@ -1,0 +1,112 @@
+.todoItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: white;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  animation: slideIn 0.3s ease;
+}
+
+.todoItem:hover {
+  background: #fafafa;
+  transform: translateX(4px);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.checkbox {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  accent-color: #667eea;
+  transition: all 0.2s ease;
+}
+
+.text {
+  flex: 1;
+  font-size: 1rem;
+  color: #2d3748;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.completed .text {
+  text-decoration: line-through;
+  color: #a0aec0;
+}
+
+.editInput {
+  flex: 1;
+  padding: 6px 8px;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  font-family: inherit;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.todoItem:hover .actions {
+  opacity: 1;
+}
+
+.editButton,
+.deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 4px 8px;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+}
+
+.editButton {
+  color: #667eea;
+}
+
+.editButton:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: scale(1.1);
+}
+
+.deleteButton {
+  color: #f56565;
+}
+
+.deleteButton:hover {
+  background: rgba(245, 101, 101, 0.1);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .todoItem {
+    padding: 14px 16px;
+  }
+  
+  .actions {
+    opacity: 1;
+  }
+  
+  .editButton,
+  .deleteButton {
+    font-size: 1.1rem;
+  }
+}
